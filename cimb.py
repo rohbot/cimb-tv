@@ -53,7 +53,9 @@ OMX_KILL_CMD = 'killall omxplayer.bin'
 MOVIE_DIR = '/home/pi/movies/'
 
 BLACK_SCREEN_CMD = "sudo fbi -T 2 -a --noverbose  /home/pi/cimb/black.jpg"
-LOGO_SCREEN_CMD = "sudo fbi -T 2 -a --noverbose  /home/pi/cimb/cimb.jpg"
+LOGO_SCREEN_CMD = "sudo fbi -T 2 -a --noverbose  /home/pi/cimb/cimb.png"
+
+PLAY_VIDEO_CMD = "omxplayer -b -r -o local logo.mp4"
 
 
 try:
@@ -114,7 +116,8 @@ while True:
 		if tokens[0] == 'x':
 			val = int(tokens[1])
 			if val == 1:
-				os.system(LOGO_SCREEN_CMD)
+				#os.system(LOGO_SCREEN_CMD)
+				os.system(PLAY_VIDEO_CMD)
 			else:
 				os.system(BLACK_SCREEN_CMD)
 		#else:
